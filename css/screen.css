@@ -2,6 +2,24 @@
   #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Clear Sans";
+    font-weight: 200;
+    src: url("../fonts/ClearSans-Light-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Clear Sans";
+    font-weight: 400;
+    src: url("../fonts/ClearSans-Regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Clear Sans";
+    font-weight: 600;
+    src: url("../fonts/ClearSans-Medium-webfont.woff") format("woff");
+}
+
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
@@ -13,12 +31,16 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 24px;
-    font-family: Helvetica, arial, sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 200;
+    font-family: "Clear Sans", Helvetica, arial, sans-serif;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to bottom right, #0A257D, #061649);
+    background-attachment: fixed;
+    color: white;
 }
 
 *,
@@ -205,7 +227,7 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+    max-width: 71em; /* 71 * 18px = 1278px */
 }
 
 /*
@@ -364,6 +386,149 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+@media(min-width: 768px) {
+    .c-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: -48px;
+    }
+
+    .c-header__nav {
+        display: block;
+    }
+}
+
+/*
+    Component: header title
+    ---
+    Title of the main header of the website
+*/
+
+.c-title-icon {
+    height: 32px;
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 16px;
+}
+
+.c-nav__link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 8px 0;
+    display: block;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: white;
+}
+
+/* .is-current .c-nav__link, */
+.c-nav__link:hover,
+.c-nav__link:focus {
+    text-shadow: 0 0 8px #8EC7FF;
+    color: #DBEDFF;
+}
+
+@media(min-width: 768px) {
+    .c-nav {
+        margin-top: 0;
+    }
+
+    .c-nav__list {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .c-nav__link {
+        padding: 0px 16px;
+    }
+    
+    .c-nav__item:first-child .c-nav__link {
+        padding: 0px 16px 0px 0px;
+    }
+
+    .c-nav__item:last-child .c-nav__link {
+        padding: 0px 0px 0px 16px;
+    }
+}
+
+/*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+    position: relative;
+    display: inline-block;
+    line-height: 24px;
+    padding: 16px 24px !important;
+    background-image: linear-gradient(to right, #033AA7 0%, #0053FB 51%, #033AA7 100%);
+    text-decoration: none;
+    color: white !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px RGBA(17, 149, 255, 0.3);
+    transition: 0.5s;
+    background-size: 200% auto;
+}
+
+.c-link-cta:hover {
+    background-position: right center; /* change the direction of the change here */
+}
+
+/*
+    Component: Figure
+    ---
+    Figure with figcaption
+*/
+
+.c-figure {
+    position: relative;
+    text-align: center;
+}
+
+.c-figure__image {
+    width: 100%;
+}
+
+.c-figure__caption {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 12px;
+    color: #474D59;
+    background: white;
+    font-weight: 400;
+    text-align: right;
+    line-height: 16px;
+    padding: 16px;
+    margin: 0;
+    border-right: 4px solid #0053FB;
+}
 
 /*------------------------------------*\
   #UTILITIES
